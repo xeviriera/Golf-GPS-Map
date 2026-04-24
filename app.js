@@ -1,8 +1,16 @@
 // ===== FORATS =====
 const holes = {
   1: {
-    tee: { lat: 41.123, lng: 2.123 },
-    greenCenter: { lat: 41.1245, lng: 2.1245 }
+    tee: { lat: 41.802426, lng: 2.081614 },
+    greenCenter: { lat: 41.800076, lng: 2.081701 }
+  },
+  2: {
+    tee: { lat: 41.803538, lng: 2.081766 },
+    greenCenter: { lat: 41.803517, lng: 2.081799 }
+  },
+  3: {
+    tee: { lat: 41.803553, lng: 2.082770 },
+    greenCenter: { lat: 41.801496, lng: 2.083035 }
   }
 };
 
