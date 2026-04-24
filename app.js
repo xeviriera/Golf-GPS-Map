@@ -11,6 +11,30 @@ const holes = {
   3: {
     tee: { lat: 41.803553, lng: 2.082770 },
     greenCenter: { lat: 41.801496, lng: 2.083035 }
+  },
+  4: {
+    tee: { lat: 41.800919, lng: 2.082674 },
+    greenCenter: { lat: 41.804055, lng: 2.082593 }
+  },
+  5: {
+    tee: { lat: 41.803869, lng: 2.082405 },
+    greenCenter: { lat: 41.803763, lng: 2.083781 }
+  },
+  6: {
+    tee: { lat: 41.802190, lng: 2.085141 },
+    greenCenter: { lat: 41.799869,  lng: 2.084980 }
+  },
+  7: {
+    tee: { lat: 41.801077, lng: 2.084485 },
+    greenCenter: { lat: 41.798473,  lng: 2.082167 }
+  },
+  8: {
+    tee: { lat: 41.798356, lng: 2.082341 },
+    greenCenter: { lat: 41.798004, lng: 2.081161 }
+  },
+  9: {
+    tee: { lat: 41.799737, lng: 2.081798 },
+    greenCenter: { lat: 41.802507, lng: 2.082120 }
   }
 };
 
