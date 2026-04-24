@@ -1,0 +1,20 @@
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+h1 {
+  text-align: center;
+}
+
+#map {
+  height: 70vh;
+  width: 100%;
+}
+
+#panel {
+  padding: 10px;
+  background: #0b3d2e;
+  color: white;
+  text-align: center;
+}
