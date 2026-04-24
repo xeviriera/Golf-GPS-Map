@@ -5,8 +5,8 @@ const holes = {
     greenCenter: { lat: 41.800076, lng: 2.081701 }
   },
   2: {
-    tee: { lat: 41.803538, lng: 2.081766 },
-    greenCenter: { lat: 41.803517, lng: 2.081799 }
+    tee: { lat: 41.799921, lng: 2.081522 },
+    greenCenter: { lat: 41.803540, lng: 2.081765 }
   },
   3: {
     tee: { lat: 41.803553, lng: 2.082770 },
@@ -29,6 +29,10 @@ const userMarker = L.circleMarker([0,0], { radius: 8 }).addTo(map);
 
 // línia jugador → green
 const lineToGreen = L.polyline([], { dashArray: "5,5" }).addTo(map);
+
+// varaialbe global
+let currentHoleId = 1; 
+
 
 // ===== DISTÀNCIA =====
 function getDistance(lat1, lon1, lat2, lon2) {
@@ -66,36 +70,48 @@ navigator.geolocation.watchPosition(
     const lat = pos.coords.latitude;
     const lng = pos.coords.longitude;
 
-    const holeId = document.getElementById("holeSelect").value;
-    const hole = holes[holeId];
+    const hole = holes[currentHoleId];
+   
 
-    // mou marcador jugador
-    userMarker.setLatLng([lat, lng]);
+    // 👇 DISTÀNCIA AL CENTRE DEL GREEN
+    const distance = getDistance(
+      lat,
+      lng,
+      hole.greenCenter.lat,
+      hole.greenCenter.lng
+    );
 
-    // línia al green
-    lineToGreen.setLatLngs([
-      [lat, lng],
-      [hole.greenCenter.lat, hole.greenCenter.lng]
-    ]);
-
-    // distància
-    const dist = getDistance(lat, lng, hole.greenCenter.lat, hole.greenCenter.lng);
-
+    // UI
     document.getElementById("distances").innerText =
-      `Distància al centre del green: ${Math.round(dist)} m`;
+      `Centre del green: ${Math.round(distance)} m`;
 
   },
   (err) => console.error(err),
   {
-    enableHighAccuracy: true,
-    maximumAge: 1000
+    enableHighAccuracy: true
   }
 );
 
 // ===== INIT =====
 loadHole(1);
+setTimeout(() => {
+  map.invalidateSize();
+}, 200);
 
-// selector
-document.getElementById("holeSelect").addEventListener("change", (e) => {
-  loadHole(e.target.value);
+
+document.querySelectorAll(".holeBtn").forEach(btn => {
+  btn.addEventListener("click", () => {
+
+    // treure selecció anterior
+    document.querySelectorAll(".holeBtn").forEach(b => b.classList.remove("active"));
+
+    // marcar aquest
+    btn.classList.add("active");
+
+    // actualitzar forat actual
+    currentHoleId = btn.dataset.id;
+
+    // carregar forat al mapa
+    loadHole(currentHoleId);
+  });
 });

@@ -18,3 +18,34 @@ h1 {
   color: white;
   text-align: center;
 }
+
+#distances {
+  font-size: 28px;
+  font-weight: bold;
+}
+
+#holesBar {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+  background: #0b3d2e;
+}
+
+.holeBtn {
+  flex: 1;
+  margin: 3px;
+  padding: 15px 0;
+  font-size: 18px;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  background: #145a43;
+  color: white;
+}
+
+.holeBtn.active {
+  background: #00c853;
+  color: black;
+}
+
+ 

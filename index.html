@@ -14,26 +14,23 @@
 
 <h1>Golf GPS</h1>
 
-<select id="holeSelect">
-  <option value="1">Forat 1</option>
-  <option value="2">Forat 2</option>
-  <option value="3">Forat 3</option>
-  <option value="4">Forat 4</option>
-  <option value="5">Forat 5</option>
-  <option value="6">Forat 6</option>
-  <option value="7">Forat 7</option>
-  <option value="8">Forat 8</option>
-  <option value="9">Forat 9</option>
-</select>
+<div id="holesBar">
+  <button class="holeBtn active" data-id="1">1</button>
+  <button class="holeBtn" data-id="2">2</button>
+  <button class="holeBtn" data-id="3">3</button>
+  <button class="holeBtn" data-id="4">4</button>
+  <button class="holeBtn" data-id="5">5</button>
+  <button class="holeBtn" data-id="6">6</button>
+  <button class="holeBtn" data-id="7">7</button>
+  <button class="holeBtn" data-id="8">8</button>
+  <button class="holeBtn" data-id="9">9</button>
+</div>
 
 <div id="map"></div>
 
 <div id="panel">
   <p id="distances"></p>
 </div>
-
-<!-- Leaflet -->
-<script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
 
 <script src="app.js"></script>
 </body>
